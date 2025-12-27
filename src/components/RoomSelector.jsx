@@ -1,12 +1,17 @@
-const RoomSelector = ({ setRoom }) => {
+function RoomSelector({ setRoom }) {
   return (
     <div>
+      <h2>Enter Room</h2>
       <input
-        placeholder="Enter Room Name"
-        onKeyDown={(e) => e.key === "Enter" && setRoom(e.target.value)}
+        placeholder="Room name"
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            setRoom(e.target.value);
+          }
+        }}
       />
     </div>
   );
-};
+}
 
 export default RoomSelector;
